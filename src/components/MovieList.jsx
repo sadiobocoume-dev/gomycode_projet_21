@@ -2,27 +2,10 @@ import { useState } from 'react'
 import MovieCard from './MovieCard'
 import Filtre from './Filtre'
 
-// Données initiales (hors composant = ne change pas au re-render)
-const moviesInitiaux = [
-    {
-        id: 1,
-        titre: 'Inception',
-        description: "Un voleur s'infiltre dans les reves",
-        postUrl: '',
-        note: 9
-    },
-    {
-        id: 2,
-        titre: 'Interstellar',
-        description: 'Un voyage au-dela de notre galaxie',
-        postUrl: '',
-        note: 8
-    }
-]
 
-function MovieList() {
-    //  ↓ valeur actuelle   ↓ fonction pour la modifier
-    const [movies, setMovies] = useState(moviesInitiaux)
+
+function MovieList({ movies, setMovies }) {
+
 
     // les etats du formulaire d'ajout
     const [nouveauTitre, setNouveauTitre] = useState('')
